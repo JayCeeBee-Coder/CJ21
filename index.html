@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>cloudjack-21.com</title>
+    <link rel="stylesheet" href="https://cloudjack-21.com/styles/cjcards.css">
+    <link rel="stylesheet" href="https://cloudjack-21.com/styles/progress.css">
+    <link rel="stylesheet" href="https://cloudjack-21.com/styles/cloudjack.css">
+  </head>
+    <body>
+      <div id = "bodycontent">
+          <div id="header">
+            <div id="session">
+              <div id="sessionID">------------</div>
+              <div id ="sessionRound">0</div>
+            </div>
+            <div><span id="gametitle">{CLOUDJACK-21} *BETA*</span></div>
+            <div id="sound">🔉</div>
+            <div id="about">i</div>
+          </div>
+            <div class="hand" id="dealer_hand">
+              <span style="opacity: .3 ;font-size:40px; align-self: end;color: lime;">DEALER READY!...</span>
+            </div>
+        <div class="hudcontainer">
+          <!--Dealer ScoreCard-->    
+          <div class="scorecard" id="dealerSC">
+            <div class="sctitle">DEALER</div>
+            <div class="ratingTitle"> CLOUDSCORE:</div>
+            <div class="progress" id="d_progress">
+              <div class="bar" id="d_bar">
+                <div class="progress-value" id="d_progVal"></div>
+              </div>
+            </div>
+            <div id="dealerResult">---</div>
+            <div id="dealerRole">---</div>
+            <hr>
+            <div id="dealersActionCard" class="inFrame"></div>
+          </div>
+
+          <!--Center console HUD-->
+          <div id="midHudDiv">
+            <div class="hudisp" id="hudisplay">
+                <div id="hudispContent">
+                  <span class="whitefont"">WELCOME TO CLOUDJACK-21!</span>
+                  <p><span class="orangefont">Ready to take your AWS skills to new heights?</span> Prepare for takeoff with CLOUDJACK-21, the electrifying game that turns cloud computing into a thrilling adventure! 
+                    Shuffle up and deal yourself into a world where Blackjack meets the AWS ecosystem. <span class="orangefont">Each card in your hand isn't just a number – it's a powerful AWS service waiting to be unleashed.</span> 
+                    Will you draw an EC2 ace or a Lambda king? The possibilities are as endless as the cloud itself!</p>
+                  <p>But hold onto your servers, because CLOUDJACK-21 isn't your average card game. <span class="orangefont">Once the dust settles on your Blackjack round, the real fun begins!</span> Losing players, don't despair 
+                    – you've just been handed the keys to the ultimate comeback. Use your newly acquired challenge cards to put the leader's infrastructure to the test. 
+                    <span class="orangefont">Can their hastily built cloud empire withstand your barrage of security checks, scalability challenges, and cost optimizations?</span> Only the truly AWS-savvy will survive this cloud-based battle of wits!</p>
+                  <p>Don't let your AWS knowledge float aimlessly in the ether – put it to the test with CLOUDJACK-21! Whether you're a cloud novice or a seasoned architect, this game will have you on the edge of your seat, 
+                    hungry for more. <span class="orangefont">With each play, you'll absorb AWS concepts faster than an S3 bucket ingesting data.</span> But hurry – user slots are filling up quicker than an auto-scaling group under heavy load. Sign up for 
+                    CLOUDJACK-21 now and transform your AWS learning journey into an exhilarating adventure. Remember, in the cloud, the house doesn't always win – but with CLOUDJACK-21, you certainly can!</p>
+                    <hr>
+                </div>
+                <div class="loadindicator" id="loadindic"></div>
+            </div>
+            <div id="cmdPanel">
+              <button class="cmd-btn" id="reset_button"> RESET </button>
+              <button class="cmd-btn" id="deal_button"> DEAL </button>
+              <button class="cmd-btn" id="hit_button"> HIT </button>
+              <button class="cmd-btn" id="stand_button"> STAND </button>
+              <button class="cmd-btn" id="battle_button">ASSUME ROLE</button>
+              <button class="cmd-btn" id="action_button"> ... </button>
+            </div>
+          </div>
+          <!--Player scorecard-->    
+          <div class="scorecard" id="playerSC">
+            <div class="sctitle">PLAYER</div>
+            <div class="ratingTitle"> CLOUDSCORE:</div>
+            <div class="progress" id="p_progress">
+              <div class="bar" id="p_bar">
+                <div class="progress-value" id="p_progVal"></div>
+              </div>
+            </div>
+            <div id="playerResult">---</div>
+            <div id="playerRole">---</div>
+            <hr>
+            <div id="playersActionCard" class="inFrame"></div>
+          </div>
+
+            <!--PIP display to show cards info-->
+            <div class="pipdisp" id="pipdisp">
+              <div id="closePip">X</div>
+              <hr>
+              <div  id="pipDispContent"></div>
+            </div>
+        </div>
+        <div id="playerPanel">
+
+          <div id="pServicesTab" class="tabcontent hand">
+            <span style="opacity: .3 ;font-size:40px; align-self: end; color: lime;">PLAYER READY!...</span>
+          </div>
+          <div id="pAttacksTab" class="tabcontent hand"></div>
+          <div id="pDefensesTab" class="tabcontent hand"></div>
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'pServicesTab')" id="sceTab">SERVICES</button>
+            <button class="tablinks" onclick="openTab(event, 'pAttacksTab')" id="atkTab">CHALLENGES</button>
+            <button class="tablinks" onclick="openTab(event, 'pDefensesTab')" id="defTab">DEFENSES</button>
+          </div>
+        </div>
+        <div id="footer">
+          Copyright &copy; 2025 JC Boissy
+          <br>Original music by Cheikh Ndoye - Some vectors and icons from <a href="https://www.svgrepo.com" target="_blank">SVG Repo</a>
+        </div>
+      </div>
+      <script src="https://cloudjack-21.com/scripts/cloudjack.js" charset="UTF-8"></script>
+      <script src="https://cloudjack-21.com/scripts/cjcards.js" charset="UTF-8"></script>
+    </body>
+</html>

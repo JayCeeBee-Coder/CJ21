@@ -1,0 +1,33 @@
+.progress {
+    background: black;
+--progress: 0%;
+width: 100%;
+height: 30px;
+border: 1px solid #00aeff;
+border-radius: 5px;
+}
+
+.progress .bar {
+width: var(--progress);
+height: 100%;
+background: linear-gradient(-45deg, var(--green_color) , #ffffff1c);
+transition: width 2s ease;
+}
+
+.progress-value{
+    font-size: large;
+    text-align: right;
+    padding-right: 5px;
+    padding-top: 5px;
+    color: black;
+}
+
+.progressValue::after{
+    content: "/%";
+}
+
+@property --progress {
+syntax: "<length>";
+initial-value: 0%;
+inherits: true;
+}

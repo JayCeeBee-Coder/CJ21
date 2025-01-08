@@ -1,0 +1,351 @@
+@import url(https://fonts.googleapis.com/css2?family=Share+Tech&display=swap);
+
+:root {
+  --main-color: #00aeff;
+  --warning_color: #ffaa00;
+  --green_color: #adff2f;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.card-front,
+.play-card{
+  --width: 9.25rem;
+  --height: calc(var(--width) * 1.4);
+  width: var(--width);
+  height: var(--height);
+}
+
+.card-front{
+  background-color: rgba(15, 178, 253, 0.053);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: solid 1px var(--main-color);
+  border-radius: .7em;
+  padding: 1.1em;
+  padding-top: 3em;
+  padding-bottom: 1em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  align-content: center;
+  font-family: Share Tech;
+  overflow: hidden;
+  color: var(--main-color);
+  flex: 0 0 auto;
+}
+
+.inFrame{
+  align-content: center;
+  height: 100%;
+  background-color: #0fb2fd1f;
+  line-height: 0.8;
+}
+
+.pip {
+  width: 75%;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20%;
+}
+
+.corner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -.1em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.corner.left {
+  top: .25em;
+  left: .25em;
+}
+
+.corner.right {
+  top: .25em;
+  right: .50em;
+  width: 1.2em;
+  opacity: .6;
+}
+
+.masked > .inFrame{
+  content-visibility: hidden;
+  background-image: url("https://cloudjack-21.com/images/21Shield2.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.masked > .corner.left{
+  content-visibility: hidden;
+}
+
+[data-type="service"] .corner.right {
+  content: url("https://cloudjack-21.com/images/box2.svg");
+}
+
+[data-type="challenge"] .corner.right {
+  content: url(https://cloudjack-21.com/images/cloud-computing-orange.svg);
+}
+
+[data-type="defense"] .corner.right {
+  content: url("https://cloudjack-21.com/images/cloud-computing3-green.svg");
+}
+
+.corner::after {
+  line-height: 0;
+  display: block;
+  width: .8em;
+  opacity: .6;
+}
+
+.card-label{
+  font-size: 15px;
+  width: 100%;
+  height: 2em;
+  text-align: center;
+  align-content: center;
+}
+
+[data-suit="hearts"] .corner.left::after {
+  content: url("https://cloudjack-21.com/images/heart-f.svg");
+}
+
+[data-suit="spades"] .corner.left::after {
+  content: url("https://cloudjack-21.com/images/spade-f.svg");
+}
+
+[data-suit="clubs"] .corner.left::after {
+  content: url("https://cloudjack-21.com/images/club-f.svg");
+}
+
+[data-suit="diamonds"] .corner.left::after {
+  content: url("https://cloudjack-21.com/images/diamond-f.svg");
+}
+
+.card-front:hover {
+  cursor: pointer;
+  animation: glow 1s infinite alternate;
+}
+
+[data-type = "challenge"]:hover {
+  animation: glowOrange 1s infinite alternate;
+}
+
+[data-type = "defense"]:hover {
+  animation: glowGreen 1s infinite alternate;
+}
+
+[data-type="defense"].masked > .inFrame{
+    background-image: url("https://cloudjack-21.com/images/21ShieldGreen.svg");
+}
+
+[data-type="service"]{
+  background-image: url("https://cloudjack-21.com/images/ServiceFrame.svg");
+  background-size:115%;
+}
+
+[data-type="challenge"]{
+  background-image: url("https://cloudjack-21.com/images/Frame5b.svg");
+  background-size: 120%;
+  border: solid 1px var(--warning_color);
+  .inFrame{
+    background-color: #ffaa001b;
+    color: var(--warning_color);
+  }
+  .pip{
+    background-size: 70%;
+  }
+}
+
+[data-type="challenge"].masked > .inFrame{
+  background-image: url("https://cloudjack-21.com/images/CloudjackerOrange.svg");
+}
+
+[data-type="defense"]{
+  background-image: url("https://cloudjack-21.com/images/DefenseFrame.svg");
+  background-size: 105%;
+  border: solid 1px var(--green_color);
+  .inFrame{
+    background-color: #acff2f17;
+    color: var(--green_color);
+  }
+}
+
+.used {
+  animation-name:disappear;
+  animation-duration:3s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.hand {
+  padding: .75rem;
+  display: flex;
+  flex-wrap:nowrap;
+  gap: 1rem;
+  width: 100%;
+  height: 15rem;
+  border: solid 1px var(--main-color);
+  overflow: hidden;
+  overflow-x: scroll;
+  background-image: url("https://cloudjack-21.com/images/AWS-Cloud_32.svg");
+  background-repeat:no-repeat;
+  padding-left: 41px;
+  /*border-radius: 10px;*/
+}
+
+.tab {
+  float: right;
+  width: 10%;
+  height: 300px;
+}
+ 
+.tab button {
+  display: block;
+  background-color: #00aeff40;
+  padding-top: 60px;
+  width: 100%;
+  height: 5rem;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: .33s;
+  font-size: 15px;
+  border: 1px solid var(--main-color);
+  border-radius: 0px 7px 7px 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  color: var(--main-color);
+  content-visibility: hidden;
+  font-size: small;
+  font-family: Share Tech;
+}
+
+.tab button:hover {
+  background-color: #0fb2fd73;
+  content-visibility:visible;
+}
+
+.tab button.active {
+  background-color: transparent;
+  border-left:solid .5px #0fb2fd50;
+}
+
+.tabcontent {
+  float: left;
+  border: 1px solid var(--main-color);
+  width: 90%;
+  border-right: none;
+}
+
+#sceTab {
+  background-image: url("https://cloudjack-21.com/images/box2.svg");
+}
+
+#atkTab {
+  background-image: url("https://cloudjack-21.com/images/cloud-computing.svg");
+}
+
+#defTab {
+  background-image: url("https://cloudjack-21.com/images/cloud-computing3.svg");
+}
+
+#playerPanel {
+  width:100%
+}
+
+.tabcontent.hand{
+  width: 90%;
+  border-right: none;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.fadein{
+  animation-name:appear;
+  animation-duration:1s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.fadeout{
+  animation-name:disappear;
+  animation-duration:1s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.glossy {
+  box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.25),
+      0 1px 0 rgba(255, 255, 255, 0.25) inset,
+      0 0 0 rgba(0, 0, 0, 0.5) inset,
+      0 1.25rem 0 rgba(255, 255, 255, 0.08) inset,
+      0 -1.25rem 1.25rem rgba(0, 0, 0, 0.3) inset,
+      0 1.25rem 1.25rem rgba(255, 255, 255, 0.1) inset;
+      transition: all 0.2s linear 0s;
+}
+
+.glossy:hover{
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 0 0 rgba(0, 0, 0, 0.25) inset,
+    0 10px 0 rgba(255, 255, 255, 0.03) inset,
+    0 -10px 10px rgba(0, 0, 0, 0.15) inset,
+    0 10px 10px rgba(255, 255, 255, 0.05) inset;
+}
+
+@keyframes appear {
+  from {
+    opacity:0;
+  }
+}
+
+@keyframes disappear {
+  to {
+    opacity:0;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px var(--main-color), 0 0 4px var(--main-color), 0 0 5px var(--main-color), 0 0 3px var(--main-color);
+  }
+  to {
+    box-shadow: 0 0 12px #5dade2, 0 0 15px #5dade2, 0 0 12px #5dade2, 0 0 15px #5dade2;
+  }
+ }
+
+ @keyframes glowOrange {
+  from {
+    box-shadow: 0 0 5px var(--warning_color), 0 0 4px var(--warning_color), 0 0 5px var(--warning_color), 0 0 3px var(--warning_color);
+  }
+  to {
+    box-shadow: 0 0 12px #ffaa00c9, 0 0 15px #ffaa00c9, 0 0 12px #ffaa00c9, 0 0 15px #ffaa00c9;
+  }
+}
+
+@keyframes glowGreen {
+  from {
+    box-shadow: 0 0 5px var(--green_color), 0 0 4px var(--green_color), 0 0 5px var(--green_color), 0 0 3px var(--green_color);
+  }
+  to {
+    box-shadow: 0 0 12px #99cd328b, 0 0 15px #99cd328b, 0 0 12px #99cd328b, 0 0 15px #99cd328b;
+  }
+}

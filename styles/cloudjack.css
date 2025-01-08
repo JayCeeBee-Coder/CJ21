@@ -1,0 +1,447 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Share+Tech&display=swap);
+
+:root {
+  --main-color: #00aeff;
+  --warning_color: #ffaa00;
+  --green_color: #adff2f;
+}
+
+body {
+  justify-content: center;
+  box-sizing: border-box; /* to include padding in dimensions*/ 
+  background-image:
+    linear-gradient(#00aeff3f, #00aeff3f),
+    url("https://cloudjack-21.com/images/4868772.jpg");
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  color: var(--main-color);
+  font-family: Share Tech;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+    border: solid 1px #0fb2fd50;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+    background: #00aeffe5;
+    border: solid #000000 .5px;
+    border-radius: 5px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #0fb2fd;
+    }
+}
+
+#bodycontent {
+  display: grid;
+  row-gap: .5rem;
+  padding: 2px;
+  width: 80rem;
+  background-color: #000;
+  box-shadow: #00aeff 0px 0px 40px;
+}
+
+hr {  
+  height: 1px;
+  background-color: var(--main-color);  
+  border: none;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#header{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: solid 1px var(--main-color);
+  align-content: center;
+  text-align: center;
+  font-size:xx-large;
+}
+
+#session{
+  position: absolute;
+  font-size:medium;
+  text-shadow: none;
+  text-align: left;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+#sessionID::before{
+  content: "SessionID: ";
+}
+
+#sessionRound::before{
+  content: "Round: ";
+}
+
+#sound{
+  position: absolute;
+  font-size:medium;
+  width: 20px;
+  height: 20px;
+  align-content: center;
+  text-align: center;
+  top: 10px;
+  right: 50px;
+}
+
+#about{
+  position: absolute;
+  border: var(--main-color) solid 1px;
+  font-size:medium;
+  width: 20px;
+  height: 20px;
+  align-content: center;
+  text-align: center;
+  border-radius: 50%;
+  top: 15px;
+  right: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.hudcontainer{
+  position: relative;
+  display: flex;
+  gap: .5rem;
+  width:100%;
+  height: 360px;
+}
+
+.scorecard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25em;
+  width: 15%;
+  min-width: 9rem;;
+  height: 360px;
+  border: solid 1px var(--main-color);
+  padding: 5px;
+  font-size: large;
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: bottom;
+  transition: 2s;
+  text-align: center;
+  /*border-radius: 10px;*/
+}
+
+#dealerSC{
+  background-image: url("https://cloudjack-21.com/images/dollar-poker-piece.svg");
+  text-align: center;
+}
+
+#playerSC{
+  background-image: url("https://cloudjack-21.com/images/poker-chip.svg");
+}
+
+.ratingTitle{
+  margin: auto;
+}
+
+.sctitle {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  /*padding-top: 3px;*/
+  background-color: rgba(15, 178, 253, 0.4);
+  color: black;
+  font-size: X-large;
+}
+
+
+#dealerScore , #playerScore{
+  padding: 4px;
+  border: var(--main-color) 1px solid;
+  font-size: medium;
+  width: 100%;
+  align-content: center;
+  color: var(--main-color);
+  text-align: center;
+}
+
+#dealerRole , #playerRole{  
+  width: 100%;
+  text-align: center;
+  -webkit-text-stroke: 2px var(--main-color);
+}
+
+
+#dealerResult , #playerResult{
+  width: 100%;
+  height: 2rem;
+  align-content: center;
+  padding:4px;
+  border: var(--main-color) 1px solid;
+  font-size: large;
+
+}
+
+#dealerResult::before , #playerResult::before{
+  content: "ROUND: "
+}
+
+#playersActionCard, #dealersActionCard{
+  display: grid;
+  row-gap: 10px;
+  margin: auto;
+  height: 185px;
+  width: 75%;
+  line-height: 1;
+  background-color: transparent;
+  background-image: none;
+  border-radius: 10px;
+  border-color: transparent;
+  .card-label{
+    font-size:large;
+    background-image: linear-gradient(transparent, rgba(15, 178, 253, 0.50), transparent);
+  }
+  [type = "challenge"] > .pip{
+    background-size: 85%;
+  }
+  animation: float 1.5s infinite;
+  transition: ease 0.5s;
+}
+
+@keyframes float {
+  0%{transform: translateY(-1%);transition: ease 1s;}
+  50%{transform: translateY(1%);transition: ease 1s;}
+  100%{transform: translateY(-1%);transition: ease 1s;}
+}
+
+#midHudDiv {
+  display:grid;
+  gap: .5em;
+  width: 70%;
+  min-width: 40rem;
+}
+
+.hudisp {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border: solid 1px var(--main-color);
+  background-image: url("https://cloudjack-21.com/images/CloudWorld.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: large;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.pipdisp{
+  position: absolute;
+  width:80%;
+  left: 10%;
+  height: 300px;
+  top: 5%;
+  background-color: rgba(0, 0, 0, 0.70);
+  background-image: url("https://cloudjack-21.com/images/21ShieldColor.svg");
+  background-repeat:no-repeat;
+  background-position: bottom;
+  background-size: 10%;
+  padding: 10px;
+  padding-top: 16px;
+  overflow: hidden;
+  overflow-y: scroll;
+  visibility: hidden;
+  text-align: center;
+  font-size: 23px;
+  color: white;
+  border: solid 1px #0fb2fd6f;
+}
+
+#pipDispContent {
+  text-align: left;
+}
+
+#closePip {
+  position: absolute;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border: var(--main-color) solid .5px;
+  left: 95%;
+  top: 5px;
+  color: var(--main-color);
+}
+
+#cmdPanel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 52px;
+  padding: 5px;
+  gap: 10px;
+  justify-content: center;
+}
+
+.cmd-btn {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-color);
+  background-color: transparent;
+  border: solid 1px;
+  width: 20%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.cmd-btn:hover,
+#closePip:hover,
+#about:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px #5dade2, 0 0 5px #5dade2, 0 0 5px #5dade2, 0 0 5px #5dade2;
+}
+
+.cmd-btn:active {
+  background-color: #00aeffc9;
+  transform: translateY(1px);
+}
+
+.cmd-btn:active.disabled {
+  background-color: #00aeff40;
+  transform: translateY(0px);
+}
+
+.disabled{
+  background-color: #00aeff40;
+}
+.cmd-btn:hover.disabled{
+  cursor:not-allowed;
+  box-shadow: 0 0 0px;
+}
+
+#reset_button::before {
+  content: "XX";
+  color: transparent;
+  background-image: url("https://cloudjack-21.com/images/power-button.svg");
+  background-repeat: no-repeat;
+}
+
+#hit_button::before {
+  content: "XX";
+  color: transparent;
+  background-image: url("https://cloudjack-21.com/images/index-finger.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#stand_button::before {
+  content: "XX";
+  color: transparent;
+  background-image: url("https://cloudjack-21.com/images/hand.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#deal_button::before {
+  content: "XX";
+  color: transparent;
+  background-image: url("https://cloudjack-21.com/images/thumbs-up.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#battle_button::before {
+  content: "XX";
+  color: transparent;
+  background-image: url("https://cloudjack-21.com/images/Res_AWS-Identity-Access-Management_Role_48.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#action_button::before {
+  content: "XX";
+  color: transparent;
+  background-image: url("https://cloudjack-21.com/images/battle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#footer {
+  font-size: small;
+}
+
+.orangefont{
+  color:var(--warning_color);
+}
+
+.greenfont{
+  color:var(--green_color);
+}
+
+.whitefont{
+  color: white;
+}
+
+.loadindicator {
+  position: absolute;
+  top: 1px;
+  right:  10px;
+  height: 7px;
+  width: 53px;
+  mask:linear-gradient(90deg,#000 70%,transparent 0) 0/20%;
+  -webkit-mask:linear-gradient(90deg,#000 90%,transparent 0) 0/20%;
+  background: linear-gradient(#00aeffb6 0 0) 0/0% no-repeat transparent;
+  visibility: hidden;
+  animation: loading 1s infinite steps(8);
+}
+
+@keyframes loading {
+    100% {background-size:150%}
+}
+
+/*
+.alert {
+  color:rgb(255, 128, 0);
+  animation: blink 1s infinite;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
+  position: absolute;
+  visibility: hidden;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 20%;
+  }
+  50% {
+    opacity: 100%;;
+  }
+  100% {
+    opacity: 20%;
+  }
+}
+*
