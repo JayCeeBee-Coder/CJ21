@@ -160,6 +160,7 @@ async function f_hit(){ //------------------------------------------------------
     const apiUrl = API_ENDPOINT + "/sessions/" + sessionID.textContent + "?action=hit";
     resp = await postToAPI(apiUrl);
     process21Response(resp);
+    document.getElementById("sceTab").click();
     if(pResult.textContent != "BUST!" && dResult.textContent != "BUST!" && pResult.textContent != "21") {
         sendToHUD("Hit / Stand?", "whitefont");
     };
