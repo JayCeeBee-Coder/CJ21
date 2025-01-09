@@ -143,10 +143,10 @@ async function f_deal(){ //-----------------------------------------------------
             sendToHUD("Hit / Stand?", "whitefont");
         }
         document.getElementById("sceTab").click();
-    } catch (error) { // Maybe not the best idea to show errors this way, but for a beta release, it may prove useful.
+    } catch (error) {
         sendToHUD(error.name);
         sendToHUD(error.message);
-        sendToHUD(error.stack);
+        console.error(error.stack);
         console.error(error.message);
     }
 }
@@ -182,7 +182,7 @@ async function f_stand(){ //----------------------------------------------------
     } catch (error) {
         sendToHUD(error.name);
         sendToHUD(error.message);
-        sendToHUD(error.stack);
+        console.error(error.stack);
         console.error(error.message);
     }
 }
@@ -229,7 +229,7 @@ async function f_battle(){ //---------------------------------------------------
         sendToHUD("Something went wrong! Please consider replrting it to help us correct.", "orangefont")
         sendToHUD(error.name);
         sendToHUD(error.message);
-        sendToHUD(error.stack);
+        console.error(error.stack);
         console.error(error.message);
     }
 }
@@ -393,7 +393,7 @@ async function f_action(){ //---------------------------------------------------
     } catch (error) {
         sendToHUD(error.name);
         sendToHUD(error.message);
-        sendToHUD(error.stack);
+        console.error(error.stack);
         console.error(error.message);
     }
     loader.style.visibility = "hidden";
